@@ -1,0 +1,168 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  image     String?
+  persona   String?
+  credits   Int      @default(60)
+  plan      String   @default("Free")
+  createdAt DateTime @default(now())
+  sessions  Session[]
+  accounts  Account[]
+  uploads   Upload[]
+  usageTokens UsageToken[]
+  payments  Payment[]
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum UploadStatus {
+  requested
+  uploaded
+  processing
+  errored
+  complete
+}
+
+model Upload {
+  id        String       @id @db.VarChar(191)
+  userId    String?
+  user      User?        @relation(fields: [userId], references: [id], onDelete: SetNull)
+  srcUrl    String
+  duration  Int?
+  sizeMb    Float?
+  status    UploadStatus @default(requested)
+  createdAt DateTime     @default(now())
+  transcripts Transcript[]
+  clips       Clip[]
+}
+
+model Transcript {
+  id        String   @id @default(cuid())
+  uploadId  String
+  upload    Upload   @relation(fields: [uploadId], references: [id], onDelete: Cascade)
+  language  String?
+  textUrl   String
+  vttUrl    String?
+  words     Int?
+  createdAt DateTime @default(now())
+}
+
+model UsageToken {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokens    Int
+  minutes   Int
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+enum ClipStatus {
+  processing
+  complete
+  errored
+}
+
+model Clip {
+  id        String      @id @default(cuid())
+  uploadId  String
+  upload    Upload      @relation(fields: [uploadId], references: [id], onDelete: Cascade)
+  start     Int
+  end       Int
+  url       String
+  thumbUrl  String
+  status    ClipStatus  @default(processing)
+  createdAt DateTime    @default(now())
+  captions   Caption[]
+  exportJobs ExportJob[]
+
+  @@index([uploadId])
+}
+
+enum ExportStatus {
+  queued
+  processing
+  complete
+  errored
+}
+
+model Caption {
+  id        String   @id @default(cuid())
+  clipId    String
+  clip      Clip     @relation(fields: [clipId], references: [id], onDelete: Cascade)
+  platform  String
+  captionText String
+  locale    String   @default("en")
+  createdAt DateTime @default(now())
+}
+
+model ExportJob {
+  id        String       @id @default(cuid())
+  clipId    String
+  clip      Clip         @relation(fields: [clipId], references: [id], onDelete: Cascade)
+  preset    String
+  url       String?
+  status    ExportStatus @default(queued)
+  createdAt DateTime     @default(now())
+
+  @@index([clipId])
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  gateway   String   // 'stripe' | 'razorpay'
+  gatewayId String   // charge / payment id
+  minutes   Int
+  amount    Float
+  currency  String   @default("USD")
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+} 

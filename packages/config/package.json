@@ -1,0 +1,22 @@
+{
+  "name": "@xclips/config",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./s3": "./dist/s3.js",
+    "./ffmpeg-presets": "./dist/ffmpeg-presets.js",
+    "./featureFlags": "./dist/featureFlags.js"
+  },
+  "dependencies": {
+    "@aws-sdk/s3-request-presigner": "^3.525.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}

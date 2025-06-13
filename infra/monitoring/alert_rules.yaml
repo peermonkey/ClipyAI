@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: xclips-rules
+spec:
+  groups:
+    - name: api.rules
+      rules:
+        - alert: HighErrorRate
+          expr: rate(http_request_duration_seconds_count{code!~"2.."}[5m]) / rate(http_request_duration_seconds_count[5m]) > 0.05
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High API error rate (>5%)"
+    - name: worker.rules
+      rules:
+        - alert: QueueLagHigh
+          expr: queue_waiting_jobs > 50
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Queue lag over threshold" 

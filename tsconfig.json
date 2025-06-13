@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "ES2020"],
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"],
+    "paths": {
+      "@xclips/ui/*": ["packages/ui/src/*"],
+      "@xclips/db": ["packages/db/client"],
+      "@xclips/config/*": ["packages/config/src/*"],
+      "@xclips/ui": ["packages/ui/src/index.ts"],
+      "@xclips/billing/*": ["services/billing/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+} 

@@ -1,0 +1,24 @@
+{
+  "name": "@xclips/worker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS='--no-warnings' ts-node-dev --respawn src/index.ts",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "bullmq": "^4.12.1",
+    "ioredis": "^5.3.2",
+    "ffmpeg-static": "^4.4.0",
+    "node-cron": "^3.0.2",
+    "prom-client": "^14.2.0",
+    "@xclips/db": "0.1.0",
+    "@xclips/config": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "cross-env": "^7.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,0 +1,9 @@
+# Nixpacks build specification for XClips.ai
+[phases.install]
+cmds = ["pnpm install --frozen-lockfile"]
+
+[phases.build]
+cmds = ["pnpm run build"]
+
+[phases.start]
+cmd = "pnpm start" 

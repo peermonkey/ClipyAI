@@ -1,1 +1,0 @@
-We are working on powershell and vs code and windows

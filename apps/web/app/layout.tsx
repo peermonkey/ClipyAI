@@ -1,37 +1,24 @@
 import './globals.css';
-import React from 'react';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../../../services/auth/auth-config';
-import { Providers } from '../components/Providers';
-import Topbar from '../components/Topbar';
-import dynamic from 'next/dynamic';
-import type { Session } from 'next-auth';
 import { Inter } from 'next/font/google';
+import { Providers } from '../components/Providers';
 
-const CommandPalette = dynamic(() => import('../components/CommandPaletteWrapper'), { ssr: false });
-const NPSModal = dynamic(() => import('./components/NPSModal'), { ssr: false });
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'XClips.ai',
-  description: 'Turn long-form content into snackable clips.',
+  title: 'ClippyAI.ai - AI-Powered Video Editing',
+  description: 'Create viral clips with AI',
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = (await getServerSession(authOptions)) as Session | null;
   return (
-    <html lang="en" className={`${inter.variable} bg-surface-matte text-white font-sans`}>
-      <body className="min-h-screen">
-        <Providers session={session}>
-          <Topbar />
+    <html lang="en" className="dark">
+      <body className={inter.className}>
+        <Providers>
           {children}
-          <CommandPalette />
-          <NPSModal />
         </Providers>
       </body>
     </html>

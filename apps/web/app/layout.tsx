@@ -5,7 +5,7 @@ import { Providers } from '../components/Providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'ClippyAI.ai - AI-Powered Video Editing',
+  title: 'Clippy.ai - AI-Powered Video Editing',
   description: 'Create viral clips with AI',
 };
 

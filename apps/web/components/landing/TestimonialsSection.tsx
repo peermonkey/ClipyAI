@@ -10,7 +10,7 @@ const testimonials = [
     role: 'YouTube Creator, 2M subscribers',
     avatar: 'A',
     avatarColor: 'bg-accent-blue',
-    content: "Game changer! ClippyAI.ai transformed my 3-hour videos into 15 viral clips in minutes. My engagement skyrocketed 400% and I save 20+ hours weekly.",
+    content: "Game changer! Clippy.ai transformed my 3-hour videos into 15 viral clips in minutes. My engagement skyrocketed 400% and I save 20+ hours weekly.",
     rating: 5,
     metric: '400% engagement boost',
   },
@@ -30,7 +30,7 @@ const testimonials = [
     role: 'Podcast Host, Tech Talk Weekly',
     avatar: 'M',
     avatarColor: 'bg-green-500',
-    content: "From dreading clip creation to loving it! ClippyAI.ai finds the perfect moments, adds stunning captions, and exports in every format I need. Pure magic.",
+    content: "From dreading clip creation to loving it! Clippy.ai finds the perfect moments, adds stunning captions, and exports in every format I need. Pure magic.",
     rating: 5,
     metric: '20+ hours saved weekly',
   },
@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
             Loved by Creators Worldwide
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            See what content creators are saying about ClippyAI.ai and how it's transforming their content workflow
+            See what content creators are saying about Clippy.ai and how it's transforming their content workflow
           </p>
         </div>
 

@@ -16,7 +16,7 @@ const plans = [
     name: 'Free',
     monthlyPrice: '$0',
     annualPrice: '$0',
-    description: 'Perfect for trying out ClippyAI.ai',
+    description: 'Perfect for trying out Clippy.ai',
     features: [
       '3 video uploads per month',
       'AI-powered clip extraction',

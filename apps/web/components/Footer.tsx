@@ -59,7 +59,7 @@ export default function Footer() {
                 <FilmIcon className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-semibold text-white group-hover:text-accent-blue transition-colors duration-200">
-                ClippyAI.ai
+                Clippy.ai
               </span>
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6 max-w-sm">
@@ -152,7 +152,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border-primary/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-text-tertiary text-sm">
-            © 2024 ClippyAI.ai. All rights reserved.
+            © 2024 Clippy.ai. All rights reserved.
           </p>
           <p className="text-text-tertiary text-xs">
             Made with ❤️ for content creators worldwide

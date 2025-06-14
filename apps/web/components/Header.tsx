@@ -67,6 +67,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const pathname = usePathname();
+  const timeoutRef = React.useRef<NodeJS.Timeout>();
 
   // Handle scroll effect
   useEffect(() => {
@@ -83,6 +84,29 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     setIsResourcesOpen(false);
   }, [pathname]);
+
+  // Handle resources dropdown with delay
+  const handleResourcesEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsResourcesOpen(true);
+  };
+
+  const handleResourcesLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsResourcesOpen(false);
+    }, 150); // 150ms delay before closing
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -109,7 +133,7 @@ export default function Header() {
                 <div className="absolute inset-0 w-8 h-8 bg-accent-blue rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-200 blur-md" />
               </div>
               <span className="text-xl font-semibold text-white transition-colors duration-200 group-hover:text-accent-blue">
-                ClippyAI.ai
+                Clippy.ai
               </span>
             </Link>
 
@@ -130,8 +154,8 @@ export default function Header() {
               {/* Resources Dropdown */}
               <div className="relative">
                 <button
-                  onMouseEnter={() => setIsResourcesOpen(true)}
-                  onMouseLeave={() => setIsResourcesOpen(false)}
+                  onMouseEnter={handleResourcesEnter}
+                  onMouseLeave={handleResourcesLeave}
                   className="flex items-center gap-1 text-text-secondary hover:text-white transition-colors duration-200"
                 >
                   Resources
@@ -151,8 +175,8 @@ export default function Header() {
                       ? 'opacity-100 scale-100 pointer-events-auto' 
                       : 'opacity-0 scale-95 pointer-events-none'
                   )}
-                  onMouseEnter={() => setIsResourcesOpen(true)}
-                  onMouseLeave={() => setIsResourcesOpen(false)}
+                  onMouseEnter={handleResourcesEnter}
+                  onMouseLeave={handleResourcesLeave}
                 >
                   <div className="p-2">
                     {dropdownItems.map((item) => (

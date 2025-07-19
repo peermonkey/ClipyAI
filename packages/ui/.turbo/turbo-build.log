@@ -1,4 +1,5 @@
 
-> @xclips/ui@0.1.0 build D:\CodeSense\Xclips.ai\packages\ui
+> @xclips/ui@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/packages/ui
 > tsc -b
 
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m

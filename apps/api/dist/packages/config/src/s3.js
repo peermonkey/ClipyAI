@@ -20,7 +20,6 @@ async function getUploadUrl(key, contentType, expiresInSeconds = 3600) {
         Bucket: process.env.S3_BUCKET,
         Key: key,
         ContentType: contentType,
-        ACL: 'private',
     });
     const url = await (0, s3_request_presigner_1.getSignedUrl)(s3, command, { expiresIn: expiresInSeconds });
     return url;

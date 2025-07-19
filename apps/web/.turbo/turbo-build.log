@@ -1,7 +1,20 @@
 
-> @xclips/web@0.1.0 build D:\CodeSense\Xclips.ai\apps\web
+> @xclips/web@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/apps/web
 > next build
 
    ▲ Next.js 14.0.4
 
-   Creating an optimized production build ...
+   Creating an optimized production build     ✓ Creating an optimized production build 
+ ✓ Compiled successfully
+   Skipping linting
+[31mFailed to compile.
+[39m
+[36m../../services/auth/auth-config.ts[39m:[33m1[39m:[33m38[39m
+[31m[1mType error[22m[39m: Cannot find module 'next-auth' or its corresponding type declarations.
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m type { [33mNextAuthOptions[39m } [36mfrom[39m [32m'next-auth'[39m[33m;[39m[0m
+[0m [90m   |[39m                                      [31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m [36mimport[39m [33mEmailProvider[39m [36mfrom[39m [32m'next-auth/providers/email'[39m[33m;[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33mGoogleProvider[39m [36mfrom[39m [32m'next-auth/providers/google'[39m[33m;[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mPrismaAdapter[39m } [36mfrom[39m [32m'@next-auth/prisma-adapter'[39m[33m;[39m[0m
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

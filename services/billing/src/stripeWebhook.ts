@@ -1,10 +1,10 @@
-import { Request, Response } from 'express';
+import express from 'express';
 import Stripe from 'stripe';
 import { prisma } from '@xclips/db';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, { apiVersion: '2023-10-16' as any });
 
-export async function stripeWebhook(req: Request, res: Response) {
+export async function stripeWebhook(req: express.Request, res: express.Response) {
   const sig = req.headers['stripe-signature'] as string;
   if (!sig) return res.status(400).send('Missing signature');
 

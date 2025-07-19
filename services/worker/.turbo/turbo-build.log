@@ -1,11 +1,4 @@
 
-> @xclips/worker@0.1.0 build D:\CodeSense\Xclips.ai\services\worker
+> @xclips/worker@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/services/worker
 > tsc -p tsconfig.json
 
-src/clip.ts(10,24): error TS7016: Could not find a declaration file for module 'ffmpeg-static'. 'D:/CodeSense/Xclips.ai/node_modules/.pnpm/ffmpeg-static@4.4.1/node_modules/ffmpeg-static/index.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/ffmpeg-static` if it exists or add a new declaration (.d.ts) file containing `declare module 'ffmpeg-static';`
-src/cronReset.ts(2,18): error TS2307: Cannot find module 'node-cron' or its corresponding type declarations.
-src/export.ts(5,24): error TS7016: Could not find a declaration file for module 'ffmpeg-static'. 'D:/CodeSense/Xclips.ai/node_modules/.pnpm/ffmpeg-static@4.4.1/node_modules/ffmpeg-static/index.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/ffmpeg-static` if it exists or add a new declaration (.d.ts) file containing `declare module 'ffmpeg-static';`
-src/metrics.ts(1,24): error TS2307: Cannot find module 'prom-client' or its corresponding type declarations.
- ELIFECYCLE  Command failed with exit code 2.

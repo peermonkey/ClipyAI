@@ -4,10 +4,11 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "types": ["node"],
     "outDir": "dist",
     "typeRoots": ["./src/types", "../../node_modules/@types"]
   },
-  "include": ["src/**/*", "src/types/express.d.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

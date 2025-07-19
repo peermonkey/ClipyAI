@@ -1,4 +1,4 @@
 
-> @xclips/api@0.1.0 build D:\CodeSense\Xclips.ai\apps\api
+> @xclips/api@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/apps/api
 > tsc -p tsconfig.json
 

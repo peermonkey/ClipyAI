@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-export default function UploadDropzone({ onUploadRequested }) {
+export function UploadDropzone({ onUploadRequested }) {
     const [progress, setProgress] = useState(null);
     const [isUploading, setIsUploading] = useState(false);
     const onDrop = useCallback(async (acceptedFiles) => {

@@ -1,5 +1,4 @@
-interface Props {
+export interface UploadDropzoneProps {
     onUploadRequested: (file: File) => Promise<void>;
 }
-export default function UploadDropzone({ onUploadRequested }: Props): import("react/jsx-runtime").JSX.Element;
-export {};
+export declare function UploadDropzone({ onUploadRequested }: UploadDropzoneProps): import("react/jsx-runtime").JSX.Element;

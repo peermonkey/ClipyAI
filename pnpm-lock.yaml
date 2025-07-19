@@ -285,6 +285,25 @@ importers:
         specifier: ^5.1.6
         version: 5.8.3
 
+  services/auth:
+    dependencies:
+      '@next-auth/prisma-adapter':
+        specifier: ^1.0.7
+        version: 1.0.7(@prisma/client@5.22.0)(next-auth@4.24.11)
+      '@xclips/db':
+        specifier: 0.1.0
+        version: link:../../packages/db
+      next-auth:
+        specifier: ^4.22.1
+        version: 4.24.11(next@14.0.4)(react-dom@18.3.1)(react@18.3.1)
+    devDependencies:
+      '@types/node':
+        specifier: ^20.4.2
+        version: 20.19.0
+      typescript:
+        specifier: ^5.1.6
+        version: 5.8.3
+
   services/billing:
     dependencies:
       '@xclips/db':

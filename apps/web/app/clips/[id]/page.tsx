@@ -338,7 +338,16 @@ export default function ClipEditorPage({ params }: { params: { id: string } }) {
                 captions={clipData.captions}
                 currentTime={currentTime}
                 duration={clipData.duration}
-                onCaptionsChange={(captions) => setClipData({ ...clipData, captions })}
+                onCaptionsChange={(captions) => {
+                  // Convert Caption format back to expected format
+                  const convertedCaptions = captions.map(caption => ({
+                    id: caption.id,
+                    text: caption.text,
+                    start: caption.startTime ?? caption.start ?? 0,
+                    end: caption.endTime ?? caption.end ?? 2
+                  }));
+                  setClipData({ ...clipData, captions: convertedCaptions });
+                }}
               />
             )}
             

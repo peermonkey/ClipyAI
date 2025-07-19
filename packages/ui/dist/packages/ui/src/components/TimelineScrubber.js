@@ -1,6 +1,6 @@
 import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
 import { useState } from 'react';
-export default function TimelineScrubber({ duration, start, end, onChange }) {
+export function TimelineScrubber({ duration, start, end, onChange }) {
     const [localStart, setLocalStart] = useState(start);
     const [localEnd, setLocalEnd] = useState(end);
     const handleStart = (e) => {

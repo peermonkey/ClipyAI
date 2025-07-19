@@ -1,8 +1,8 @@
-import { Request, Response } from 'express';
+import express from 'express';
 import crypto from 'crypto';
 import { prisma } from '@xclips/db';
 
-export async function razorpayWebhook(req: Request, res: Response) {
+export async function razorpayWebhook(req: express.Request, res: express.Response) {
   const secret = process.env.RAZORPAY_WEBHOOK_SECRET as string;
   const signature = req.headers['x-razorpay-signature'] as string;
   const payload = JSON.stringify(req.body);

@@ -20,7 +20,20 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-app.get('/api/healthz', (_req, res) => res.status(200).json({ ok: true }));
+app.get('/api/healthz', (_req, res) => {
+  const healthStatus = {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    version: process.env.npm_package_version || '0.1.0',
+    environment: process.env.NODE_ENV || 'development',
+    services: {
+      api: 'healthy',
+      // Note: Database and Redis checks would go here in production
+    }
+  };
+  res.status(200).json(healthStatus);
+});
 
 app.use('/api', authRouter);
 app.use('/api/upload', uploadRouter);

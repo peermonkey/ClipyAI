@@ -1,0 +1,4 @@
+
+> @xclips/billing@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/services/billing
+> tsc -b
+

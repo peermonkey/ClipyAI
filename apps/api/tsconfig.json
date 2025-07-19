@@ -9,5 +9,5 @@
     "typeRoots": ["./src/types", "../../node_modules/@types"]
   },
   "include": ["src/**/*", "src/types/express.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "../../services/billing/**/*"]
 }

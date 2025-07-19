@@ -7,3 +7,7 @@ export * from './SmartCard';
 export * from './ExportModal';
 export * from './CreditMeter';
 export * from './CommandPalette';
+export * from './VideoPlayer';
+export * from './PlatformPreview';
+export * from './ViralScoreMeter';
+export * from './CaptionEditor';

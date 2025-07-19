@@ -1,7 +1,29 @@
 
-> @xclips/web@0.1.0 build D:\CodeSense\Xclips.ai\apps\web
+> @xclips/web@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/apps/web
 > next build
 
    ▲ Next.js 14.0.4
 
-   Creating an optimized production build ...
+   Creating an optimized production build     ✓ Creating an optimized production build 
+ ✓ Compiled successfully
+ [31m[1m⨯[22m[39m ESLint: Failed to load config "@xclips/eslint-config" to extend from. Referenced from: /home/runner/work/ClipyAI/ClipyAI/.eslintrc.js
+   Linting and checking validity of types     ✓ Linting and checking validity of types 
+Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
+    at new a (/home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/app/api/auth/[...nextauth]/route.js:1:5778)
+    at 13926 (/home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/app/api/auth/[...nextauth]/route.js:1:1404)
+    at t (/home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/webpack-runtime.js:1:128)
+    at r (/home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/app/api/auth/[...nextauth]/route.js:72:86447)
+    at /home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/app/api/auth/[...nextauth]/route.js:72:86474
+    at t.X (/home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/webpack-runtime.js:1:1196)
+    at /home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/app/api/auth/[...nextauth]/route.js:72:86460
+    at Object.<anonymous> (/home/runner/work/ClipyAI/ClipyAI/apps/web/.next/server/app/api/auth/[...nextauth]/route.js:72:86502)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+
+> Build error occurred
+Error: Failed to collect page data for /api/auth/[...nextauth]
+    at /home/runner/work/ClipyAI/ClipyAI/node_modules/[4m.pnpm[24m/next@14.0.4_react-dom@18.3.1_react@18.3.1/node_modules/[4mnext[24m/dist/build/utils.js:1220:15
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m {
+  type: [32m'Error'[39m
+}
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

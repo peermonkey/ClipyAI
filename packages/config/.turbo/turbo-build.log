@@ -1,4 +1,4 @@
 
-> @xclips/config@0.1.0 build D:\CodeSense\Xclips.ai\packages\config
+> @xclips/config@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/packages/config
 > tsc -b
 

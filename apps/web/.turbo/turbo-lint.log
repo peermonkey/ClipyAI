@@ -1,0 +1,7 @@
+
+> @xclips/web@0.1.0 lint /home/runner/work/ClipyAI/ClipyAI/apps/web
+> next lint
+
+Failed to load config "@xclips/eslint-config" to extend from.
+Referenced from: /home/runner/work/ClipyAI/ClipyAI/.eslintrc.js
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

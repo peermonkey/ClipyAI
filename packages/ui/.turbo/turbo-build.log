@@ -1,4 +1,4 @@
 
-> @xclips/ui@0.1.0 build D:\CodeSense\Xclips.ai\packages\ui
+> @xclips/ui@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/packages/ui
 > tsc -b
 

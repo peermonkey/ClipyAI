@@ -1,4 +1,4 @@
-// File: D:\CodeSense\Xclips.ai\apps\web\app\page.tsx
+// File: /home/runner/work/ClipyAI/ClipyAI/apps/web/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

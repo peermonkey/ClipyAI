@@ -1,0 +1,24 @@
+{
+  "name": "@xclips/billing",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "exports": {
+    "./stripeWebhook": "./dist/stripeWebhook.js",
+    "./razorpayWebhook": "./dist/razorpayWebhook.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "stripe": "^12.16.0",
+    "@xclips/db": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "typescript": "^5.1.6"
+  }
+}

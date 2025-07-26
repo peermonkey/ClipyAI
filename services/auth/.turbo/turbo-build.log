@@ -1,0 +1,4 @@
+
+> @xclips/auth@0.1.0 build /home/runner/work/ClipyAI/ClipyAI/services/auth
+> tsc -b
+

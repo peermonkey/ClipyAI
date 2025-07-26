@@ -8,7 +8,7 @@ const PRESETS = [
     { key: '1:1', label: 'Square (1:1)' },
     { key: '16:9', label: 'Landscape (16:9)' },
 ];
-export default function ExportModal({ clipId, apiUrl }) {
+export function ExportModal({ clipId, apiUrl }) {
     const baseUrl = apiUrl || process.env.NEXT_PUBLIC_API_URL || '';
     const [open, setOpen] = useState(false);
     const [jobs, setJobs] = useState([]);

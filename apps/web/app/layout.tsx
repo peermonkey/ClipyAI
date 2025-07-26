@@ -1,8 +1,5 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
 import { Providers } from '../components/Providers';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Clippy.ai - AI-Powered Video Editing',
@@ -16,7 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body className="font-inter antialiased"
+        style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
         <Providers>
           {children}
         </Providers>
